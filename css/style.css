@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --primary-color: #e74c3c;
+    --white-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 1.5rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo img {
+    width: 100%;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.nav-links li {
+    list-style: none;
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--white-color);
+    font-size: 1.4rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-btn {
+    font-size: 2.2rem;
+    color: var(--white-color);
+    display: none;
+    cursor: pointer;
+}
+
+/* Showcase Section */
+#showcase {
+    background: url("../images/background\ .jpg") no-repeat center center/cover;
+
+    min-height: 100vh;
+    position: relative;
+    z-index: -10;
+
+
+
+    padding-top: 120px;
+    text-align: left;
+    padding-left: 2rem;
+}
+
+#showcase .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-text {
+    width: 180px;
+    margin-bottom: 1rem;
+}
+
+#showcase h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+#showcase h3 {
+    font-size: 1.8rem;
+    color: #555;
+}
