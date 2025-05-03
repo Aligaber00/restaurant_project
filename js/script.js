@@ -5,16 +5,26 @@ menuBtn.addEventListener('click', () => {
     nav.classList.toggle('active');
 });
 
-// Smooth scrolling when clicking the "Menus" link in the navbar
+// Smooth scrolling to #food_lover
 document.querySelector('a[href="#food_lover"]').addEventListener('click', function (e) {
-    e.preventDefault(); // Prevent the default link behavior
-
+    e.preventDefault();
     const section = document.querySelector('#food_lover');
     section.scrollIntoView({
-        behavior: 'smooth', // Enable smooth scrolling
-        block: 'start'      // Scroll to the top of the section
+        behavior: 'smooth',
+        block: 'start'
     });
 });
+
+// Smooth scrolling to #about
+document.querySelector('a[href="#about"]').addEventListener('click', function (e) {
+    e.preventDefault();
+    const section = document.querySelector('#about');
+    section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+});
+
 
 //dynmaic images
 
