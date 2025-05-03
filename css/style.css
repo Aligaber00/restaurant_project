@@ -89,7 +89,7 @@ header {
 
 /* Showcase Section */
 #showcase {
-    background: url("../images/background\ .jpg") no-repeat center center/cover;
+    background: url("../images/back_ground.jpg") no-repeat center center/cover;
 
     min-height: 100vh;
     position: relative;
@@ -122,3 +122,87 @@ header {
     font-size: 1.8rem;
     color: #555;
 }
+
+/*---------- food lover start--------*/
+#food_lover h2,
+#food_lover h3 {
+    text-align: center;
+}
+.main_heading {
+    font-size: 4rem;      
+    font-weight: 700;    
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.normal_heading-1 {
+    font-size: 2.4rem;
+    color: red; /* 🔴 makes "Food lover" red */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+#food_lover {
+    padding: 10rem 0;
+    background: #f4f4f4;
+}
+
+.food_lover_container{
+    margin: 3rem 0;
+}
+.btn_container{
+    margin: 4rem 0;
+    width: 100%;
+    display: inline-block;
+    color: #000;
+    text-align: center;
+}
+.btn_cat{
+    padding: 0.7rem 1.2rem;
+    cursor:pointer;
+    margin: 0 2rem;
+    border : 1px solid #ddd;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+}
+.btn_cat:hover,.active_btn{
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.menus_items_container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3rem;
+}
+
+.menus_items_container .img_cards{
+    border: 1px solid #ddd;
+    box-shadow: var(--box-shadow);
+}
+
+.img_cards img{
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.img_cards p{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--ubuntu);
+}
+.img_cards .price{
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+.img_cards img:hover{
+    transform: scale(1.1);
+}
+
