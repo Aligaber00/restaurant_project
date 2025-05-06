@@ -142,7 +142,7 @@ header {
 
 .normal_heading-1 {
     font-size: 2.4rem;
-    color: red; /* 🔴 makes "Food lover" red */
+    color: red; 
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -151,65 +151,110 @@ header {
     background: #f4f4f4;
 }
 
-.food_lover_container{
+.food_lover_container {
     margin: 3rem 0;
 }
-.btn_container{
+.btn_container {
     margin: 4rem 0;
     width: 100%;
     display: inline-block;
     color: #000;
     text-align: center;
 }
-.btn_cat{
+.btn_cat {
     padding: 0.7rem 1.2rem;
-    cursor:pointer;
+    cursor: pointer;
     margin: 0 2rem;
-    border : 1px solid #ddd;
+    border: 1px solid #ddd;
     font-size: 1.4rem;
     border-radius: 5px;
     transition: all 0.5s ease-in-out;
 }
-.btn_cat:hover,.active_btn{
+.btn_cat:hover,
+.active_btn {
     background: var(--primary-color);
     color: var(--white-color);
 }
 
-.menus_items_container{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
+.menus_items_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 3rem;
 }
 
-.menus_items_container .img_cards{
+/* Fix: Card wrapper must have height */
+.img_cards {
+    perspective: 1000px;
+    cursor: pointer;
+    height: 400px; /* Set card height */
+    position: relative;
+}
+
+.card_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Flip on click */
+.img_cards.flipped .card_inner {
+    transform: rotateY(180deg);
+}
+
+.card_front,
+.card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border: 1px solid #ddd;
     box-shadow: var(--box-shadow);
+    padding: 1rem;
+    box-sizing: border-box;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.img_cards img{
+/* Front */
+.card_front img {
     display: block;
     width: 100%;
-    height: 300px;
+    height: 240px;
     object-fit: cover;
-    margin-bottom: 2rem;
-    cursor: pointer;
+    margin-bottom: 1rem;
     transition: all 0.5s ease-in-out;
-
 }
 
-.img_cards p{
+.card_front p.price {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.card_front p {
     text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
     font-family: var(--ubuntu);
 }
-.img_cards .price{
-    color: var(--primary-color);
-    font-size: 1.8rem;
+
+/* Back */
+.card_back {
+    transform: rotateY(180deg);
+    text-align: center;
 }
-.img_cards img:hover{
-    transform: scale(1.1);
+
+.card_back p {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
 }
+
+
+
 /*------------------About as section-------------------*/
 * {
     margin: 0;
