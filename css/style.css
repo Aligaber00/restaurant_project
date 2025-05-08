@@ -458,3 +458,29 @@ p {
 .customer_card:hover {
     transform: translateY(-5px);
 }
+
+.review-form-container {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.review-form-container input,
+.review-form-container textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 4px;
+}
+
+.review-form-container button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+}

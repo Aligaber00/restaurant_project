@@ -184,5 +184,22 @@ function displayMenusItem(menuItem) {
         card.classList.toggle("flipped");
       });
     });
-  }
-  
+}
+
+document.getElementById('reviewForm').addEventListener('submit', function (rev) {
+    rev.preventDefault();
+
+    const name = this.querySelector('input').value;
+    const review = this.querySelector('textarea').value;
+    const rand_img = `./images/customer${Math.floor(Math.random() * 3) + 1}.jpg`;
+
+    const newReview = `
+    <div class="customer_card">
+        <img src="${rand_img}" alt="pfp">
+        <p>"${review}"</p>
+        <p class="name">${name}</p>
+    </div>`;
+
+    document.querySelector('.customer_cards_container').prepend(newReview);
+    this.reset();
+});
