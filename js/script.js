@@ -24,6 +24,56 @@ document.querySelector('a[href="#about"]').addEventListener('click', function (e
         block: 'start'
     });
 });
+//home
+const foods = [
+  {
+    name: "Super Supreme pizza",
+    description: "Loaded with pepperoni, beef, mushrooms, onions, and peppers.",
+    image: "images/pizza2.jpg",
+    alt: "Super Supreme pizza"
+  },
+  {
+    name: "Caramel Molten Cake",
+    description: "Warm chocolate cake with gooey caramel center.",
+    image: "images/dessert3.jpg",
+    alt: "Caramel molten cake dessert"
+  },
+  {
+    name: "Angus Beef Burger",
+    description: "Premium Angus beef burger with gourmet toppings.",
+    image: "images/burger2.jpg",
+    alt: "Angus burger"
+  }
+];
+
+
+let currentIndex = 0;
+
+const foodImage = document.getElementById('foodImage');
+const foodName = document.getElementById('foodName');
+const foodDescription = document.getElementById('foodDescription');
+
+function updateCarousel() {
+  const food = foods[currentIndex];
+  foodImage.style.opacity = 0;
+  setTimeout(() => {
+      foodImage.src = food.image;
+      foodImage.alt = food.alt;
+      foodName.textContent = food.name;
+      foodDescription.textContent = food.description;
+      foodImage.style.opacity = 1;
+  }, 250);
+}
+
+// Auto-slide every 3 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % foods.length;
+  updateCarousel();
+}, 3000);
+
+// Initial call
+document.addEventListener('DOMContentLoaded', updateCarousel);
+
 
 
 //dynmaic images
@@ -72,7 +122,7 @@ const menu = [
     },
     {
       id: 4,
-      title: "Angus burger",
+      title: "Angus Beef burger",
       Category: "Lunch",
       price: "20$",
       img: "images/burger2.jpg",
