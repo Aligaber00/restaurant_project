@@ -236,20 +236,37 @@ function displayMenusItem(menuItem) {
     });
 }
 
+document.querySelectorAll('.star-rating span').forEach(star => {
+    star.onclick = () => {
+        const rating = star.dataset.rating;
+        document.querySelector('[name="rating"]').value = rating;
+        document.querySelectorAll('.star-rating span').forEach((star, pos) => {
+            star.classList.toggle('active', pos < rating);
+        });
+    };
+});
+
 document.getElementById('reviewForm').addEventListener('submit', function (rev) {
     rev.preventDefault();
 
-    const name = this.querySelector('input').value;
-    const review = this.querySelector('textarea').value;
-    const rand_img = `./images/customer${Math.floor(Math.random() * 3) + 1}.jpg`;
+    const name = this.querySelector('input').value.trim();
+    const review = this.querySelector('textarea').value.trim();
+    const rating = this.querySelector('[name="rating"]').value;
+    const rand_img = `images/customer${Math.floor(Math.random() * 3) + 1}.jpg`;
+
+    if (!name || !review || rating === "0") {
+        alert("Please fill all fields and select a star rating!");
+        return;
+    }
 
     const newReview = `
     <div class="customer_card">
         <img src="${rand_img}" alt="pfp">
+        <div class="star-rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
         <p>"${review}"</p>
         <p class="name">${name}</p>
     </div>`;
 
-    document.querySelector('.customer_cards_container').prepend(newReview);
+    document.querySelector('.customer_cards_container').insertAdjacentHTML('afterbegin', newReview);
     this.reset();
 });

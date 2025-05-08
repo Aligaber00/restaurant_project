@@ -81,16 +81,19 @@
             <div class="customer_cards_container">
                 <div class="customer_card">
                     <img src="./images/customer1.jpg" alt="pfp" />
+                    <div class="star-rating">★★★★★</div>
                     <p>"Best meal I’ve had all week."</p>
                     <p class="name">diasty</p>
                 </div>
                 <div class="customer_card">
                     <img src="./images/customer2.jpeg" alt="pfp" />
+                    <div class="star-rating">★★★★☆</div>
                     <p>"Fast delivery, great food."</p>
                     <p class="name">ibrahim</p>
                 </div>
                 <div class="customer_card">
                     <img src="./images/customer3.jpeg" alt="pfp" />
+                    <div class="star-rating">★★★★★</div>
                     <p>"The desserts were a dream! Definitely coming back for more, highly recommend the caramel molten cake."</p>
                     <p class="name">kevin</p>
                 </div>
@@ -100,6 +103,14 @@
                 <h2 class="main_heading">LEAVE A REVIEW</h2>
                 <form id="reviewForm">
                     <input type="text" placeholder="Your Name" required>
+                    <div class="star-rating">
+                        <span data-rating="1">★</span>
+                        <span data-rating="2">★</span>
+                        <span data-rating="3">★</span>
+                        <span data-rating="4">★</span>
+                        <span data-rating="5">★</span>
+                        <input type="hidden" name="rating" value="0">
+                    </div>
                     <textarea placeholder="Your Review" required></textarea>
                     <button type="submit">Submit</button>
                 </form>
