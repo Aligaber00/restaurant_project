@@ -252,7 +252,6 @@ document.getElementById('reviewForm').addEventListener('submit', function (rev) 
     const name = this.querySelector('input').value.trim();
     const review = this.querySelector('textarea').value.trim();
     const rating = this.querySelector('[name="rating"]').value;
-    const rand_img = `images/customer${Math.floor(Math.random() * 3) + 1}.jpg`;
 
     if (!name || !review || rating === "0") {
         alert("Please fill all fields and select a star rating!");
@@ -261,7 +260,7 @@ document.getElementById('reviewForm').addEventListener('submit', function (rev) 
 
     const newReview = `
     <div class="customer_card">
-        <img src="${rand_img}" alt="pfp">
+        <img src="./images/user.jpg" alt="pfp">
         <div class="star-rating">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
         <p>"${review}"</p>
         <p class="name">${name}</p>
