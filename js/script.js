@@ -268,4 +268,6 @@ document.getElementById('reviewForm').addEventListener('submit', function (rev) 
 
     document.querySelector('.customer_cards_container').insertAdjacentHTML('afterbegin', newReview);
     this.reset();
+    document.querySelectorAll('.star-rating span').forEach(star => star.classList.remove('active'));
+    this.querySelector('[name="rating"]').value = "0";
 });
